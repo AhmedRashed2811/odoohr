@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee,access_employee,model_hr_customized_employees,cutomized_hr_module.hr_manager_group,1,1,1,1
+access_candidate_lines,access_candidate_lines,model_candidate_line,cutomized_hr_module.hr_manager_group,1,1,1,1
+access_departments_manager,access_departments,model_hr_customized_departments,cutomized_hr_module.hr_manager_group,1,1,1,1
+access_candidates_manager,access_candidates,model_hr_customized_candidates,cutomized_hr_module.hr_manager_group,1,1,1,1
+access_departments_senior,access_departments,model_hr_customized_departments,cutomized_hr_module.hr_senior_group,1,1,1,0
+access_jobs,access_jobs,model_hr_customized_jobs,,1,1,1,1

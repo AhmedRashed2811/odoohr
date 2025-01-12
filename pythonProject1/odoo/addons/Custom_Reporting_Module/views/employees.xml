@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Action for List and Form Views -->
+    <record id="action_employee_create" model="ir.actions.act_window">
+        <field name="name">Employee</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.employees</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Add a Menu to Access Employee Views -->
+    <menuitem id="menu_employees_root" name="Employees" sequence="10"/>
+    <menuitem id="menu_employees_operations" parent="menu_employees_root" name="Operations" sequence="10"/>
+    <menuitem id="menu_employees_create" parent="menu_employees_operations" name="Manage Employees" sequence="10" action="action_employee_create"/>
+
+    <!-- Employee List View -->
+    <record id="view_employee_list" model="ir.ui.view">
+        <field name="name">hr.employees.list</field>
+        <field name="model">hr.employees</field>
+        <field name="arch" type="xml">
+
+            <list>
+
+                <field name="name"/>
+                <field name="marital_status"/>
+                <field name="date_of_birth"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="address"/>
+                <field name="department_id" options="{'no_open': True}"/>
+                <field name="job_id" options="{'no_open': True}"/>
+                <field name="manager_id" options="{'no_open': True}"/>
+                <field name="joining_date"/>
+                <field name="salary"/>
+                <field name="is_active"/>
+                <button name="delete_employee" string="Delete" type="object" class="btn btn-danger" confirm="Are you sure you want to delete this applicant?"/>
+                <button name="update_employee" string="Update" type="object" class="btn btn-primary"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Employee Form View -->
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">hr.employees.form</field>
+        <field name="model">hr.employees</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="date_of_birth"/>
+                        <field name="marital_status"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="address"/>
+                        <field name="department_id" options="{'no_create_edit': True}"/>
+                        <field name="job_id" options="{'no_create_edit': True}"/>
+                        <field name="manager_id" options="{'no_create_edit': True}"/>
+                        <field name="joining_date"/>
+                        <field name="salary"/>
+                        <field name="is_active"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Assign Views to Action -->
+    <record id="action_employee_views" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_employee_list"/>
+        <field name="act_window_id" ref="action_employee_create"/>
+    </record>
+
+    <record id="action_employee_views_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_employee_form"/>
+        <field name="act_window_id" ref="action_employee_create"/>
+    </record>
+</odoo>

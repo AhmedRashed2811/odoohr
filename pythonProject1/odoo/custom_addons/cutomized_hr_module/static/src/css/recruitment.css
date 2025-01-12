@@ -1,0 +1,31 @@
+/* Header styling */
+.header_custom table thead > tr > th {
+    background-color: aquamarine !important;
+    text-align: center !important; /* Centers the text horizontally */
+    vertical-align: middle !important; /* Centers the text vertically */
+    color: rgb(116, 119, 121);
+}
+
+/* Data rows styling */
+.header_custom table tbody > tr > td {
+    text-align: center !important; /* Ensures all text is centered */
+    vertical-align: middle !important; /* Ensures vertical alignment */
+    color: black; /* Text color */
+    font-weight: normal; /* Normal font weight */
+}
+
+/* Specific styling for float fields */
+.header_custom table tbody > tr > td.o_field_float {
+    text-align: center; /* Ensures float fields are horizontally centered */
+    vertical-align: middle; /* Ensures vertical alignment */
+}
+
+
+/* Increased specificity to ensure the style is applied */
+.o_list_view.header_custom table thead > tr > th {
+    background-color: aquamarine !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: rgb(116, 119, 121) !important;
+    font-weight: bold;
+}

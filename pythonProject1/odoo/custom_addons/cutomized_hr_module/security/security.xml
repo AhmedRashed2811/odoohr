@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_manager_group" model="res.groups">
+        <field name="name">HR Manager</field>
+    </record>
+
+    <record id="hr_senior_group" model="res.groups">
+        <field name="name">HR Senior</field>
+    </record>
+
+    <record id="hr_junior_group" model="res.groups">
+        <field name="name">HR Junior</field>
+    </record>
+
+</odoo>

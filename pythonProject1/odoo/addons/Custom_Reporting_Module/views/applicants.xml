@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Action for List and Form Views -->
+    <record id="action_applicant_create" model="ir.actions.act_window">
+        <field name="name">Applicant</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.applicants</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Add a Menu to Access Employee Views -->
+    <menuitem id="menu_applicant_root" name="Applicant" sequence="9"/>
+    <menuitem id="menu_applicant_operations" parent="menu_applicant_root" name="Operations" sequence="9"/>
+    <menuitem id="menu_applicant_create" parent="menu_applicant_operations" name="Manage Applicant" sequence="9" action="action_applicant_create"/>
+
+    <!-- Employee List View -->
+    <record id="view_applicant_list" model="ir.ui.view">
+        <field name="name">hr.applicants.list</field>
+        <field name="model">hr.applicants</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="phone_number"/>
+                <field name="professional_job_title"/>
+                <field name="degree"/>
+                <field name="field_of_study"/>
+                <field name="experience_years"/>
+                <field name="marital_status"/>
+                <field name="birth_date"/>
+                <field name="resume_pdf" widget="binary" string="Resume"/>
+                <button name="delete_applicant" string="Delete" type="object" class="btn btn-danger" confirm="Are you sure you want to delete this applicant?"/>
+                <button name="update_applicant" string="Update" type="object" class="btn btn-primary"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Employee Form View -->
+    <record id="view_applicant_form" model="ir.ui.view">
+        <field name="name">hr.applicants.form</field>
+        <field name="model">hr.applicants</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    <field name="age"/>
+                    <field name="phone_number"/>
+                    <field name="professional_job_title"/>
+                    <field name="degree"/>
+                    <field name="field_of_study"/>
+                    <field name="experience_years"/>
+                    <field name="marital_status"/>
+                    <field name="birth_date"/>
+                    <field name="resume_pdf" widget="binary" string="Resume"/>
+
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <!-- Assign Views to Action -->
+    <record id="action_applicant_views" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_applicant_list"/>
+        <field name="act_window_id" ref="action_applicant_create"/>
+    </record>
+
+    <record id="action_applicant_views_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_applicant_form"/>
+        <field name="act_window_id" ref="action_applicant_create"/>
+    </record>
+
+</odoo>
+
+
+
+
+
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+<record id="action_employee_create" model="ir.actions.act_window">
+            <field name="name">Employee</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.employees</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+            <menuitem id="menu_employees_create" parent="menu_employees_operations" name="Create Employee" sequence="10" action="action_employee_create"/>
+
+</odoo> -->
+

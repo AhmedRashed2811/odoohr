@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Employees Menu -->
+    <menuitem id="menu_employees_root" name="Employees" sequence="10"/>
+    <menuitem id="menu_employees_operations" parent="menu_employees_root" name="Operations" sequence="10"/>
+
+    <menuitem id="menu_employees_manage" parent="menu_employees_operations" name="Manage Employees" sequence="12" action="action_employee_create"/>
+    <menuitem id="menu_departments_manage" parent="menu_employees_operations" name="Manage Departments" sequence="20" action="action_department_create"/>
+    <menuitem id="menu_jobs_manage" parent="menu_employees_operations" name="Manage Jobs" sequence="30" action="action_job_create"/>
+
+    <!-- Applicant Menu -->
+    <menuitem id="menu_applicant_root" name="Applicant" sequence="13"/>
+    <menuitem id="menu_applicant_operations" parent="menu_applicant_root" name="Operations" sequence="9"/>
+</odoo>

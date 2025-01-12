@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="customized_hr_module_root_menu"
+        name="Customized HR"
+        
+    />
+
+    <menuitem
+        id="employees_menu"
+        name="Employees"
+        parent="customized_hr_module_root_menu"
+
+    />
+
+    <menuitem
+        id="customized_hr_recruitment_module_root_menu"
+        name="Customized HR Recruitment"
+        
+    />
+
+    <menuitem
+        id="recruitment_menu"
+        name="Recruitment"
+        parent="customized_hr_recruitment_module_root_menu"
+    />
+
+    <menuitem
+        id="jobs_menu_recruitment"
+        name="Jobs"
+        parent="recruitment_menu"
+    /> 
+
+
+    <menuitem
+        id="customized_hr_module_root_menu_dep"
+        name="Customized HR Departments"
+    />
+
+    <menuitem
+        id="departments_menu"
+        name="Departments"
+        parent="customized_hr_module_root_menu"
+
+    />
+
+    <menuitem
+        id="customized_hr_module_root_menu_jobs"
+        name="Customized HR Jobs"
+    />
+
+    <menuitem
+        id="jobs_menu"
+        name="Jobs"
+        parent="customized_hr_module_root_menu"
+
+    />
+
+
+
+
+</odoo>

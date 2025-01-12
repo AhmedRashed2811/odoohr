@@ -1,0 +1,41 @@
+<!--<odoo>-->
+<!--    <record id="view_dashboard_kanban" model="ir.ui.view">-->
+<!--        <field name="name">hr.applicants.dashboard.kanban</field>-->
+<!--        <field name="model">hr.applicants.dashboard</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban>-->
+<!--                <templates>-->
+<!--                    <t t-name="kanban-box">-->
+<!--                        <div>-->
+<!--                            <strong>Total Applicants:</strong> <t t-esc="record.total_applicants.value"/>-->
+<!--                            <ul>-->
+<!--                                <li>Bachelor's: <t t-esc="record.bachelors_percentage.value"/>%</li>-->
+<!--                                <li>Master's: <t t-esc="record.masters_percentage.value"/>%</li>-->
+<!--                                <li>High School: <t t-esc="record.high_school_percentage.value"/>%</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </t>-->
+<!--                </templates>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_dashboard_graph" model="ir.ui.view">-->
+<!--        <field name="name">hr.applicants.dashboard.graph</field>-->
+<!--        <field name="model">hr.applicants.dashboard</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <graph type="bar" string="Applicants Analytics">-->
+<!--                <field name="zero_two_experience" type="measure"/>-->
+<!--                <field name="two_five_experience" type="measure"/>-->
+<!--                <field name="five_plus_experience" type="measure"/>-->
+<!--            </graph>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <menuitem id="menu_dashboard" name="Applicants Dashboard" parent="menu_applicants_root" action="action_dashboard"/>-->
+<!--    <record id="action_dashboard" model="ir.actions.act_window">-->
+<!--        <field name="name">Applicants Dashboard</field>-->
+<!--        <field name="res_model">hr.applicants.dashboard</field>-->
+<!--        <field name="view_mode">kanban,graph</field>-->
+<!--    </record>-->
+<!--</odoo>-->

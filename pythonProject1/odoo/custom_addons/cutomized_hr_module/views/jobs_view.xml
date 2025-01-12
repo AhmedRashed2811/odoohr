@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="jobs_view_list" model="ir.ui.view">
+        <field name="name">Jobs List</field>
+        <field name="model">hr.customized.jobs</field>
+        <field name="arch" type="xml">
+            <list multi_edit="1">
+                <header>
+                    <button name="jobs_xlsx_report" type="object" string="Download Report for AI" class="btn-primary"/>
+                    <button name="jobs_xlsx_report_custom" type="object" string="Download Report" class="btn-primary"/>
+                </header>
+
+                <field name="name"/>
+                <field name="description"/>
+                <field name="department_id"/>
+                <field name="is_open"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="jobs_view_search" model="ir.ui.view">
+        <field name="name">Search Jobs</field>
+        <field name="model">hr.customized.jobs</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="opened_job" string="Is Opened?" domain="[('is_open', '=','True')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="jobs_view_form" model="ir.ui.view">
+        <field name="name">Jobs Form</field>
+        <field name="model">hr.customized.jobs</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group >
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="is_open"/>
+                        </group>
+
+                        <group>
+                            <field name="department_id"/>
+                        </group>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="jobs_action" model="ir.actions.act_window">
+        <field name="name">Jobs</field>
+        <field name="res_model">hr.customized.jobs</field>
+    </record>
+
+
+    <menuitem
+        id="jobs_operations_menu"
+        name="Manage Jobs"
+        parent="jobs_menu"
+        action="jobs_action"
+    />
+
+</odoo>
