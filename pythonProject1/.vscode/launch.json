@@ -1,0 +1,21 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Odoo Debug",
+        "type": "python",
+        "request": "launch",
+        "program": "c:\\Users\\maria\\OdooDev\\PythonProject1\\odoo\\odoo-bin",
+        "console": "integratedTerminal",
+        "args": [
+          "--config=c:\\Users\\maria\\OdooDev\\PythonProject1\\conf\\odoo.conf",
+          "-u",
+          "cutomized_hr_module",
+          "-u",
+          "hr_recruitment",
+        ],
+        "justMyCode": true
+      }
+    ]
+  }
